@@ -41,6 +41,28 @@ namespace Varneon.UdonArrayExtensions
         }
 
         /// <summary>
+        /// Adds the elements of the specified collection to the end of the array
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="array"></param>
+        /// <param name="collection"></param>
+        /// <returns></returns>
+        public static T[] AddRange<T>(this T[] array, T[] collection)
+        {
+            int length = array.Length;
+
+            int collectionLength = collection.Length;
+
+            T[] newArray = (T[])Array.CreateInstance(array.GetElementType(), length + collectionLength);
+
+            array.CopyTo(newArray, 0);
+
+            collection.CopyTo(newArray, length);
+
+            return newArray;
+        }
+
+        /// <summary>
         /// Inserts item to array at index
         /// </summary>
         /// <typeparam name="T"></typeparam>
@@ -70,6 +92,46 @@ namespace Varneon.UdonArrayExtensions
             {
                 Array.Copy(array, 0, newArray, 0, index);
                 Array.Copy(array, index, newArray, index + 1, length - index);
+            }
+
+            return newArray;
+        }
+
+        /// <summary>
+        /// Inserts the elements of a collection into the <T>[] at the specified index
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="array"></param>
+        /// <param name="index"></param>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        public static T[] InsertRange<T>(this T[] array, int index, T[] collection)
+        {
+            int length = array.Length;
+
+            int collectionLength = collection.Length;
+
+            int newLength = length + collectionLength;
+
+            index = Mathf.Clamp(index, 0, length);
+
+            T[] newArray = (T[])Array.CreateInstance(array.GetElementType(), newLength);
+
+            if (index == 0)
+            {
+                Array.Copy(array, 0, newArray, collectionLength, length);
+                Array.Copy(collection, 0, newArray, 0, collectionLength);
+            }
+            else if (index == length)
+            {
+                Array.Copy(array, 0, newArray, 0, length);
+                Array.Copy(collection, 0, newArray, index, collectionLength);
+            }
+            else
+            {
+                Array.Copy(array, 0, newArray, 0, index);
+                Array.Copy(collection, 0, newArray, index, collectionLength);
+                Array.Copy(array, index, newArray, index + collectionLength, newLength - index - collectionLength);
             }
 
             return newArray;
@@ -152,6 +214,41 @@ namespace Varneon.UdonArrayExtensions
             Array.Reverse(array);
 
             return array;
+        }
+
+        /// <summary>
+        /// Determines whether an element is in the array
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="array"></param>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        public static bool Contains<T>(this T[] array, T item)
+        {
+            return Array.IndexOf(array, item) >= 0;
+        }
+
+        /// <summary>
+        /// Creates a shallow copy of a range of elements in the source
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="array"></param>
+        /// <param name="index"></param>
+        /// <param name="count"></param>
+        /// <returns></returns>
+        public static T[] GetRange<T>(this T[] array, int index, int count)
+        {
+            int length = array.Length;
+
+            index = Mathf.Clamp(index, 0, length);
+
+            count = Mathf.Clamp(count, 0, length - index);
+
+            T[] newArray = (T[])Array.CreateInstance(array.GetElementType(), count);
+
+            Array.Copy(array, index, newArray, 0, count);
+
+            return newArray;
         }
 
         /// <summary>
