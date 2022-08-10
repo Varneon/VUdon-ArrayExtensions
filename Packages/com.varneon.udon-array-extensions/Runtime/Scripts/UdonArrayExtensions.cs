@@ -252,13 +252,16 @@ namespace Varneon.UdonArrayExtensions
         }
 
         /// <summary>
-        /// Gets the element type of the array
+        /// Gets the element type of the array type
         /// </summary>
-        /// <param name="array"></param>
+        /// <remarks>
+        /// Type.GetElementType() is not exposed in Udon
+        /// </remarks>
+        /// <param name="type"></param>
         /// <returns></returns>
-        public static Type GetElementType(this Array array)
+        public static Type GetElementType(this Type type)
         {
-            return Type.GetType(array.GetType().FullName.TrimEnd(']', '['));
+            return Type.GetType(type.FullName.TrimEnd(']', '['));
         }
     }
 }
