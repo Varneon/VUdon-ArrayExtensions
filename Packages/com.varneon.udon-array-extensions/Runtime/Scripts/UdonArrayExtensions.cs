@@ -18,7 +18,7 @@ namespace Varneon.UdonArrayExtensions
         {
             int length = array.Length;
 
-            T[] newArray = (T[])Array.CreateInstance(array.GetElementType(), length + 1);
+            T[] newArray = new T[length + 1];
 
             array.CopyTo(newArray, 0);
 
@@ -53,7 +53,7 @@ namespace Varneon.UdonArrayExtensions
 
             int collectionLength = collection.Length;
 
-            T[] newArray = (T[])Array.CreateInstance(array.GetElementType(), length + collectionLength);
+            T[] newArray = new T[length + collectionLength];
 
             array.CopyTo(newArray, 0);
 
@@ -76,7 +76,7 @@ namespace Varneon.UdonArrayExtensions
 
             index = Mathf.Clamp(index, 0, length);
 
-            T[] newArray = (T[])Array.CreateInstance(array.GetElementType(), length + 1);
+            T[] newArray = new T[length + 1];
 
             newArray.SetValue(item, index);
 
@@ -115,7 +115,7 @@ namespace Varneon.UdonArrayExtensions
 
             index = Mathf.Clamp(index, 0, length);
 
-            T[] newArray = (T[])Array.CreateInstance(array.GetElementType(), newLength);
+            T[] newArray = new T[newLength];
 
             if (index == 0)
             {
@@ -166,7 +166,7 @@ namespace Varneon.UdonArrayExtensions
 
             int maxIndex = length - 1;
 
-            T[] newArray = (T[])Array.CreateInstance(array.GetElementType(), maxIndex);
+            T[] newArray = new T[maxIndex];
 
             if (index == 0)
             {
@@ -196,7 +196,7 @@ namespace Varneon.UdonArrayExtensions
         {
             if(newSize < 0) { newSize = 0; }
 
-            T[] newArray = (T[])Array.CreateInstance(array.GetElementType(), newSize);
+            T[] newArray = new T[newSize];
 
             Array.Copy(array, 0, newArray, 0, Mathf.Min(newSize, array.Length));
 
@@ -244,7 +244,7 @@ namespace Varneon.UdonArrayExtensions
 
             count = Mathf.Clamp(count, 0, length - index);
 
-            T[] newArray = (T[])Array.CreateInstance(array.GetElementType(), count);
+            T[] newArray = new T[count];
 
             Array.Copy(array, index, newArray, 0, count);
 
