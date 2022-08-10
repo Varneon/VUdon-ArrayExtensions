@@ -101,5 +101,5 @@ public class UdonArrayExtensionDemo : UdonSharpBehaviour
 1. Navigate to your toolbar: `Window` > `Package Manager` > `[+]` > `Add package from git URL...` and type in: `https://github.com/Varneon/UdonArrayExtensions.git?path=/Packages/com.varneon.udon-array-extensions`
 
 ## Installation via Unitypackage:
-1. Download latest UdonExplorer from [here](https://github.com/Varneon/UdonArrayExtensions/releases/latest)
+1. Download latest Udon Array Extensions from [here](https://github.com/Varneon/UdonArrayExtensions/releases/latest)
 2. Import the downloaded .unitypackage into your Unity project
