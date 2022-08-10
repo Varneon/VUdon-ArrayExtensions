@@ -259,7 +259,7 @@ namespace Varneon.UdonArrayExtensions
         /// </remarks>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static Type GetElementType(this Type type)
+        public static Type GetElementTypeUdon(this Type type)
         {
             return Type.GetType(type.FullName.TrimEnd(']', '['));
         }
