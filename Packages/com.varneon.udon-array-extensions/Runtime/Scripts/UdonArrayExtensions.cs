@@ -4,12 +4,12 @@ using UnityEngine;
 namespace Varneon.UdonArrayExtensions
 {
     /// <summary>
-    /// Array extension methods for adding partial feature set from List<T> to Udon
+    /// Array extension methods for adding partial feature set from List to Udon
     /// </summary>
     public static class UdonArrayExtensions
     {
         /// <summary>
-        /// Adds item to the end of the array
+        /// Adds an object to the end of the array
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
@@ -28,7 +28,7 @@ namespace Varneon.UdonArrayExtensions
         }
 
         /// <summary>
-        /// Adds item to the end of the array while ensuring that duplicates are not added
+        /// Adds an object to the end of the array while ensuring that duplicates are not added
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
@@ -63,7 +63,7 @@ namespace Varneon.UdonArrayExtensions
         }
 
         /// <summary>
-        /// Inserts item to array at index
+        /// Inserts an element into the array at the specified index
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
@@ -98,7 +98,7 @@ namespace Varneon.UdonArrayExtensions
         }
 
         /// <summary>
-        /// Inserts the elements of a collection into the <T>[] at the specified index
+        /// Inserts the elements of a collection into the array at the specified index
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
@@ -138,7 +138,7 @@ namespace Varneon.UdonArrayExtensions
         }
 
         /// <summary>
-        /// Removes item from the array
+        /// Removes the first occurrence of a specific object from the array
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
@@ -153,7 +153,7 @@ namespace Varneon.UdonArrayExtensions
         }
 
         /// <summary>
-        /// Removes item from the array at index
+        /// Removes the element at the specified index of the array
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
@@ -204,7 +204,7 @@ namespace Varneon.UdonArrayExtensions
         }
 
         /// <summary>
-        /// Reverses the array
+        /// Reverses the order of the elements in the entire array
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
@@ -229,7 +229,7 @@ namespace Varneon.UdonArrayExtensions
         }
 
         /// <summary>
-        /// Creates a shallow copy of a range of elements in the source
+        /// Creates a shallow copy of a range of elements in the source array
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
