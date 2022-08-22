@@ -100,6 +100,13 @@ public class UdonArrayExtensionDemo : UdonSharpBehaviour
 ## Installation via Unity Package Manager (git):
 1. Navigate to your toolbar: `Window` > `Package Manager` > `[+]` > `Add package from git URL...` and type in: `https://github.com/Varneon/UdonArrayExtensions.git?path=/Packages/com.varneon.udon-array-extensions`
 
+## Installation via [VRChat Creator Companion](https://vcc.docs.vrchat.com/):
+1. Download the the repository's .zip [here](https://github.com/Varneon/UdonArrayExtensions/archive/refs/heads/main.zip)
+2. Unpack the .zip somewhere
+3. In VRChat Creator Companion, navigate to `Settings` > `User Packages` > `Add`
+4. Navigate to the unpacked folder, `com.varneon.udon-array-extensions` and click `Select Folder`
+5. `Udon Array Extensions` should now be visible under `Local User Packages` in the project view in VRChat Creator Companion
+
 ## Installation via Unitypackage:
 1. Download latest Udon Array Extensions from [here](https://github.com/Varneon/UdonArrayExtensions/releases/latest)
 2. Import the downloaded .unitypackage into your Unity project
