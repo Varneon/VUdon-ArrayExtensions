@@ -101,16 +101,31 @@ public class UdonArrayExtensionDemo : UdonSharpBehaviour
 
 ```
 
-## Installation via Unity Package Manager (git):
-1. Navigate to your toolbar: `Window` > `Package Manager` > `[+]` > `Add package from git URL...` and type in: `https://github.com/Varneon/UdonArrayExtensions.git?path=/Packages/com.varneon.udon-array-extensions`
+# Installation
 
-## Installation via [VRChat Creator Companion](https://vcc.docs.vrchat.com/):
-1. Download the the repository's .zip [here](https://github.com/Varneon/UdonArrayExtensions/archive/refs/heads/main.zip)
-2. Unpack the .zip somewhere
-3. In VRChat Creator Companion, navigate to `Settings` > `User Packages` > `Add`
-4. Navigate to the unpacked folder, `com.varneon.udon-array-extensions` and click `Select Folder`
-5. `Udon Array Extensions` should now be visible under `Local User Packages` in the project view in VRChat Creator Companion
+<details><summary>
 
-## Installation via Unitypackage:
-1. Download latest Udon Array Extensions from [here](https://github.com/Varneon/UdonArrayExtensions/releases/latest)
-2. Import the downloaded .unitypackage into your Unity project
+### Import with [VRChat Creator Companion](https://vcc.docs.vrchat.com/vpm/packages#user-packages):</summary>
+
+> 1. Download `com.varneon.vudon.array-extensions.zip` from [here](https://github.com/Varneon/VUdon-ArrayExtensions/archive/refs/heads/main.zip)
+> 2. Unpack the .zip somewhere
+> 3. In VRChat Creator Companion, navigate to `Settings` > `User Packages` > `Add`
+> 4. Navigate to the unpacked folder, `com.varneon.vudon.array-extensions` and click `Select Folder`
+> 5. `VUdon - Array Extensions` should now be visible under `Local User Packages` in the project view in VRChat Creator Companion
+> 6. Click `Add`
+
+</details><details><summary>
+
+### Import with [Unity Package Manager (git)](https://docs.unity3d.com/2019.4/Documentation/Manual/upm-ui-giturl.html):</summary>
+
+> 1. In the Unity toolbar, select `Window` > `Package Manager` > `[+]` > `Add package from git URL...` 
+> 2. Paste the following link: `https://github.com/Varneon/VUdon-ArrayExtensions.git?path=/Packages/com.varneon.vudon.array-extensions`
+
+</details><details><summary>
+
+### Import from [Unitypackage](https://docs.unity3d.com/2019.4/Documentation/Manual/AssetPackagesImport.html):</summary>
+
+> 1. Download latest `com.varneon.vudon.array-extensions.unitypackage` from [here](https://github.com/Varneon/VUdon-ArrayExtensions/releases/latest)
+> 2. Import the downloaded .unitypackage into your Unity project
+
+</details>
