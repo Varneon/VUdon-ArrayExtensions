@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Varneon.UdonArrayExtensions
+namespace Varneon.VUdon.ArrayExtensions
 {
     /// <summary>
     /// Array extension methods for adding partial feature set from List to Udon
@@ -58,6 +58,54 @@ namespace Varneon.UdonArrayExtensions
             array.CopyTo(newArray, 0);
 
             collection.CopyTo(newArray, length);
+
+            return newArray;
+        }
+
+        /// <summary>
+        /// Determines whether an element is in the array
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="array"></param>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        public static bool Contains<T>(this T[] array, T item)
+        {
+            return Array.IndexOf(array, item) >= 0;
+        }
+
+        /// <summary>
+        /// Gets the element type of the array type
+        /// </summary>
+        /// <remarks>
+        /// Type.GetElementType() is not exposed in Udon
+        /// </remarks>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        public static Type GetElementTypeUdon(this Type type)
+        {
+            return Type.GetType(type.FullName.TrimEnd(']', '['));
+        }
+
+        /// <summary>
+        /// Creates a shallow copy of a range of elements in the source array
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="array"></param>
+        /// <param name="index"></param>
+        /// <param name="count"></param>
+        /// <returns></returns>
+        public static T[] GetRange<T>(this T[] array, int index, int count)
+        {
+            int length = array.Length;
+
+            index = Mathf.Clamp(index, 0, length);
+
+            count = Mathf.Clamp(count, 0, length - index);
+
+            T[] newArray = new T[count];
+
+            Array.Copy(array, index, newArray, 0, count);
 
             return newArray;
         }
@@ -214,54 +262,6 @@ namespace Varneon.UdonArrayExtensions
             Array.Reverse(array);
 
             return array;
-        }
-
-        /// <summary>
-        /// Determines whether an element is in the array
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="array"></param>
-        /// <param name="item"></param>
-        /// <returns></returns>
-        public static bool Contains<T>(this T[] array, T item)
-        {
-            return Array.IndexOf(array, item) >= 0;
-        }
-
-        /// <summary>
-        /// Creates a shallow copy of a range of elements in the source array
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="array"></param>
-        /// <param name="index"></param>
-        /// <param name="count"></param>
-        /// <returns></returns>
-        public static T[] GetRange<T>(this T[] array, int index, int count)
-        {
-            int length = array.Length;
-
-            index = Mathf.Clamp(index, 0, length);
-
-            count = Mathf.Clamp(count, 0, length - index);
-
-            T[] newArray = new T[count];
-
-            Array.Copy(array, index, newArray, 0, count);
-
-            return newArray;
-        }
-
-        /// <summary>
-        /// Gets the element type of the array type
-        /// </summary>
-        /// <remarks>
-        /// Type.GetElementType() is not exposed in Udon
-        /// </remarks>
-        /// <param name="type"></param>
-        /// <returns></returns>
-        public static Type GetElementTypeUdon(this Type type)
-        {
-            return Type.GetType(type.FullName.TrimEnd(']', '['));
         }
     }
 }
