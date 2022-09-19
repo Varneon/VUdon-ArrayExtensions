@@ -24,7 +24,7 @@ Collection of array extension methods compatible with UdonSharp 1.x which adds p
 ```csharp
 using UdonSharp;
 using UnityEngine;
-using Varneon.UdonArrayExtensions;
+using Varneon.VUdon.ArrayExtensions;
 
 public class UdonArrayExtensionDemo : UdonSharpBehaviour
 {
