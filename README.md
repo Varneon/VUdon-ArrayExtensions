@@ -107,7 +107,7 @@ public class UdonArrayExtensionDemo : UdonSharpBehaviour
 
 ### Import with [VRChat Creator Companion](https://vcc.docs.vrchat.com/vpm/packages#user-packages):</summary>
 
-> 1. Download `com.varneon.vudon.array-extensions.zip` from [here](https://github.com/Varneon/VUdon-ArrayExtensions/archive/refs/heads/main.zip)
+> 1. Download `com.varneon.vudon.array-extensions.zip` from [here](https://github.com/Varneon/VUdon-ArrayExtensions/releases/latest)
 > 2. Unpack the .zip somewhere
 > 3. In VRChat Creator Companion, navigate to `Settings` > `User Packages` > `Add`
 > 4. Navigate to the unpacked folder, `com.varneon.vudon.array-extensions` and click `Select Folder`
