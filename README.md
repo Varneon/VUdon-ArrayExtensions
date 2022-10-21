@@ -19,6 +19,9 @@ Collection of array extension methods compatible with UdonSharp 1.x which adds p
 | `Reverse` | | *Reverses Array* |
 | `Contains` | `T` | *Determines whether an element is in the array* |
 | `GetRange` | `Int, Int` | *Creates a shallow copy of a range of elements in the source* |
+| `GetElementTypeUdon` | | *Gets the element type of the array type* |
+| `FirstOrDefault` | | *Returns the first element, or default value if the array is empty* |
+| `LastOrDefault` | | *Returns the last element, or default value if the array is empty* |
 
 > ### :warning: For performance reasons this extension method library doesn't implement null checks! Please ensure the arrays you're accessing with the methods from this library are initialized.
 
