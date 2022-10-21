@@ -267,6 +267,7 @@ namespace Varneon.VUdon.ArrayExtensions
         /// <summary>
         /// Returns the first element of the sequence, or a specified default value if no such element is found.
         /// </summary>
+        /// <remarks>Equivalent to System.Linq.FirstOrDefault() without predicate</remarks>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
         /// <returns></returns>
@@ -280,6 +281,7 @@ namespace Varneon.VUdon.ArrayExtensions
         /// <summary>
         /// Returns the last element of a sequence, or a specified default value if the sequence contains no elements.
         /// </summary>
+        /// <remarks>Equivalent to System.Linq.FirstOrDefault()</remarks>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
         /// <returns></returns>
