@@ -6,22 +6,22 @@
 
 Collection of array extension methods compatible with UdonSharp 1.x which adds partial feature set from List
 
-| **Method** | **Parameters** | **Description** |
-| - | - | - |
-| `Add` | `T` | *Adds an item to an array* |
-| `AddUnique` | `T` | *Adds an item to an array and ensures duplicates are not added* |
-| `AddRange` | `T[]` | *Adds the elements of the specified collection to the end of the array* |
-| `Insert` | `Int, T` | *Inserts item to array at index* |
-| `InsertRange` | `Int, T[]` | *Inserts the elements of a collection into the <T>[] at the specified index* |
-| `Remove` | `T` | *Removes item from array* |
-| `RemoveAt` | `Int` | *Removes item at index from array* |
-| `Resize` | `Int` | *Resizes array* |
-| `Reverse` | | *Reverses Array* |
-| `Contains` | `T` | *Determines whether an element is in the array* |
-| `GetRange` | `Int, Int` | *Creates a shallow copy of a range of elements in the source* |
-| `GetElementTypeUdon` | | *Gets the element type of the array type* |
-| `FirstOrDefault` | | *Returns the first element, or default value if the array is empty* |
-| `LastOrDefault` | | *Returns the last element, or default value if the array is empty* |
+| **Method** | **Parameters** | **Returns** | **Description** |
+| - | - | - | - |
+| `Add` | `T` | `T[]` | *Adds an item to an array* |
+| `AddUnique` | `T` | `T[]` | *Adds an item to an array and ensures duplicates are not added* |
+| `AddRange` | `T[]` | `T[]` | *Adds the elements of the specified collection to the end of the array* |
+| `Insert` | `Int, T` | `T[]` | *Inserts item to array at index* |
+| `InsertRange` | `Int, T[]` | `T[]` | *Inserts the elements of a collection into the <T>[] at the specified index* |
+| `Remove` | `T` | `T[]` | *Removes item from array* |
+| `RemoveAt` | `Int` | `T[]` | *Removes item at index from array* |
+| `Resize` | `Int` | `T[]` | *Resizes array* |
+| `Reverse` | | `T[]` | *Reverses Array* |
+| `Contains` | `T` | `bool` | *Determines whether an element is in the array* |
+| `GetRange` | `Int, Int` | `T[]` | *Creates a shallow copy of a range of elements in the source* |
+| `GetElementTypeUdon` | | `Type` | *Gets the element type of the array type* |
+| `FirstOrDefault` | | `T` | *Returns the first element, or default value if the array is empty* |
+| `LastOrDefault` | | `T` | *Returns the last element, or default value if the array is empty* |
 
 > ### :warning: For performance reasons this extension method library doesn't implement null checks! Please ensure the arrays you're accessing with the methods from this library are initialized.
 
