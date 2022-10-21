@@ -1,6 +1,6 @@
 <div>
 
-# [VUdon](https://github.com/Varneon/VUdon) - Array Extensions [![GitHub Repo stars](https://img.shields.io/github/stars/Varneon/VUdon-ArrayExtensions?style=flat&label=Stars)](https://github.com/Varneon/VUdon-ArrayExtensions/stargazers) [![GitHub all releases](https://img.shields.io/github/downloads/Varneon/VUdon-ArrayExtensions/total?color=blue&label=Downloads&style=flat)](https://github.com/Varneon/VUdon-ArrayExtensions/releases) [![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/Varneon/VUdon-ArrayExtensions?color=blue&label=Release&sort=semver&style=flat)](https://github.com/Varneon/VUdon-ArrayExtensions/releases/latest)
+# [VUdon](https://github.com/Varneon/VUdon) - Array Extensions ![](https://img.shields.io/badge/UdonSharp-Library-bb37fa) [![GitHub Repo stars](https://img.shields.io/github/stars/Varneon/VUdon-ArrayExtensions?style=flat&label=Stars)](https://github.com/Varneon/VUdon-ArrayExtensions/stargazers) [![GitHub all releases](https://img.shields.io/github/downloads/Varneon/VUdon-ArrayExtensions/total?color=blue&label=Downloads&style=flat)](https://github.com/Varneon/VUdon-ArrayExtensions/releases) [![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/Varneon/VUdon-ArrayExtensions?color=blue&label=Release&sort=semver&style=flat)](https://github.com/Varneon/VUdon-ArrayExtensions/releases/latest)
 
 </div>
 
