@@ -263,5 +263,18 @@ namespace Varneon.VUdon.ArrayExtensions
 
             return array;
         }
+
+        /// <summary>
+        /// Returns the first element of the sequence, or a specified default value if no such element is found.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="array"></param>
+        /// <returns></returns>
+        public static T FirstOrDefault<T>(this T[] array)
+        {
+            if (array.Length == 0) { return default; }
+
+            return array[0];
+        }
     }
 }
