@@ -8,6 +8,8 @@ namespace Varneon.VUdon.ArrayExtensions
     /// </summary>
     public static class UdonArrayExtensions
     {
+        #region System.Collections.Generic.List<T>
+
         /// <summary>
         /// Adds an object to the end of the array
         /// </summary>
@@ -72,19 +74,6 @@ namespace Varneon.VUdon.ArrayExtensions
         public static bool Contains<T>(this T[] array, T item)
         {
             return Array.IndexOf(array, item) >= 0;
-        }
-
-        /// <summary>
-        /// Gets the element type of the array type
-        /// </summary>
-        /// <remarks>
-        /// Type.GetElementType() is not exposed in Udon
-        /// </remarks>
-        /// <param name="type"></param>
-        /// <returns></returns>
-        public static Type GetElementTypeUdon(this Type type)
-        {
-            return Type.GetType(type.FullName.TrimEnd(']', '['));
         }
 
         /// <summary>
@@ -263,5 +252,58 @@ namespace Varneon.VUdon.ArrayExtensions
 
             return array;
         }
+
+        #endregion
+
+        #region System.Linq
+
+        /// <summary>
+        /// Returns the first element of the sequence, or a specified default value if no such element is found.
+        /// </summary>
+        /// <remarks>Equivalent to System.Linq.FirstOrDefault() without predicate</remarks>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="array"></param>
+        /// <returns></returns>
+        public static T FirstOrDefault<T>(this T[] array)
+        {
+            if (array.Length == 0) { return default; }
+
+            return array[0];
+        }
+
+        /// <summary>
+        /// Returns the last element of a sequence, or a specified default value if the sequence contains no elements.
+        /// </summary>
+        /// <remarks>Equivalent to System.Linq.FirstOrDefault()</remarks>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="array"></param>
+        /// <returns></returns>
+        public static T LastOrDefault<T>(this T[] array)
+        {
+            int length = array.Length;
+
+            if (length == 0) { return default; }
+
+            return array[length - 1];
+        }
+
+        #endregion
+
+        #region System.Type
+
+        /// <summary>
+        /// Gets the element type of the array type
+        /// </summary>
+        /// <remarks>
+        /// Type.GetElementType() is not exposed in Udon
+        /// </remarks>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        public static Type GetElementTypeUdon(this Type type)
+        {
+            return Type.GetType(type.FullName.TrimEnd(']', '['));
+        }
+
+        #endregion
     }
 }
