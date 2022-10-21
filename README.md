@@ -5,7 +5,7 @@
 </div>
 
 Collection of array extension methods compatible with UdonSharp 1.x which adds partial feature set from List
-  
+
 | **Method** | **Parameters** | **Description** |
 | - | - | - |
 | `Add` | `T` | *Adds an item to an array* |
@@ -19,6 +19,8 @@ Collection of array extension methods compatible with UdonSharp 1.x which adds p
 | `Reverse` | | *Reverses Array* |
 | `Contains` | `T` | *Determines whether an element is in the array* |
 | `GetRange` | `Int, Int` | *Creates a shallow copy of a range of elements in the source* |
+
+> ### :warning: For performance reasons this extension method library doesn't implement null checks! Please ensure the arrays you're accessing with the methods from this library are initialized.
 
 ## Usage Demonstration
 ```csharp
