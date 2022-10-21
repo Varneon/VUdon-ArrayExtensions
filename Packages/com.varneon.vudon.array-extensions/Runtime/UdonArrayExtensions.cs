@@ -276,5 +276,20 @@ namespace Varneon.VUdon.ArrayExtensions
 
             return array[0];
         }
+
+        /// <summary>
+        /// Returns the last element of a sequence, or a specified default value if the sequence contains no elements.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="array"></param>
+        /// <returns></returns>
+        public static T LastOrDefault<T>(this T[] array)
+        {
+            int length = array.Length;
+
+            if (length == 0) { return default; }
+
+            return array[length - 1];
+        }
     }
 }
