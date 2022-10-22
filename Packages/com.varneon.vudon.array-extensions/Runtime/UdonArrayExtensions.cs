@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Varneon.VUdon.ArrayExtensions
 {
     /// <summary>
-    /// Array extension methods for adding partial feature set from List to Udon
+    /// Array extension methods for adding partial feature set from List&lt;T&gt; and System.Linq, including replacements to methods not supported by Udon/UdonSharp and additional custom methods to UdonSharp
     /// </summary>
     public static class UdonArrayExtensions
     {
