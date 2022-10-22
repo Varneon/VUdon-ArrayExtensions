@@ -34,20 +34,6 @@ namespace Varneon.VUdon.ArrayExtensions
         }
 
         /// <summary>
-        /// Adds an object to the end of the array while ensuring that duplicates are not added
-        /// </summary>
-        /// <returns>Modified T[]</returns>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="array"></param>
-        /// <param name="item"></param>
-        public static T[] AddUnique<T>(this T[] array, T item)
-        {
-            if(Array.IndexOf(array, item) >= 0) { return array; }
-
-            return array.Add(item);
-        }
-
-        /// <summary>
         /// Adds the elements of the specified collection to the end of the array
         /// <para>
         /// Based on: <see href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.addrange?view=net-6.0">List&lt;T&gt;.AddRange(IEnumerable&lt;T&gt;)</see>
@@ -251,24 +237,6 @@ namespace Varneon.VUdon.ArrayExtensions
         }
 
         /// <summary>
-        /// Resizes the array
-        /// </summary>
-        /// <returns>Modified T[]</returns>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="array"></param>
-        /// <param name="newSize"></param>
-        public static T[] Resize<T>(this T[] array, int newSize)
-        {
-            if(newSize < 0) { newSize = 0; }
-
-            T[] newArray = new T[newSize];
-
-            Array.Copy(array, 0, newArray, 0, Mathf.Min(newSize, array.Length));
-
-            return newArray;
-        }
-
-        /// <summary>
         /// Reverses the order of the elements in the entire array
         /// <para>
         /// Based on: <see href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.reverse?view=net-6.0">List&lt;T&gt;.Reverse</see>
@@ -340,6 +308,42 @@ namespace Varneon.VUdon.ArrayExtensions
         public static Type GetElementTypeUdon(this Type type)
         {
             return Type.GetType(type.FullName.TrimEnd(']', '['));
+        }
+
+        #endregion
+
+        #region Custom
+
+        /// <summary>
+        /// Adds an object to the end of the array while ensuring that duplicates are not added
+        /// </summary>
+        /// <returns>Modified T[]</returns>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="array"></param>
+        /// <param name="item"></param>
+        public static T[] AddUnique<T>(this T[] array, T item)
+        {
+            if (Array.IndexOf(array, item) >= 0) { return array; }
+
+            return array.Add(item);
+        }
+
+        /// <summary>
+        /// Resizes the array
+        /// </summary>
+        /// <returns>Modified T[]</returns>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="array"></param>
+        /// <param name="newSize"></param>
+        public static T[] Resize<T>(this T[] array, int newSize)
+        {
+            if (newSize < 0) { newSize = 0; }
+
+            T[] newArray = new T[newSize];
+
+            Array.Copy(array, 0, newArray, 0, Mathf.Min(newSize, array.Length));
+
+            return newArray;
         }
 
         #endregion
