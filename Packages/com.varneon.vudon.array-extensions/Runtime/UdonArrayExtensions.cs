@@ -12,7 +12,11 @@ namespace Varneon.VUdon.ArrayExtensions
 
         /// <summary>
         /// Adds an object to the end of the array
+        /// <para>
+        /// Based on: <see href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.add?view=net-6.0">List&lt;T&gt;.Add(T)</see>
+        /// </para>
         /// </summary>
+        /// <returns>Modified T[]</returns>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
         /// <param name="item"></param>
@@ -32,6 +36,7 @@ namespace Varneon.VUdon.ArrayExtensions
         /// <summary>
         /// Adds an object to the end of the array while ensuring that duplicates are not added
         /// </summary>
+        /// <returns>Modified T[]</returns>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
         /// <param name="item"></param>
@@ -44,11 +49,14 @@ namespace Varneon.VUdon.ArrayExtensions
 
         /// <summary>
         /// Adds the elements of the specified collection to the end of the array
+        /// <para>
+        /// Based on: <see href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.addrange?view=net-6.0">List&lt;T&gt;.AddRange(IEnumerable&lt;T&gt;)</see>
+        /// </para>
         /// </summary>
+        /// <returns>Modified T[]</returns>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
         /// <param name="collection"></param>
-        /// <returns></returns>
         public static T[] AddRange<T>(this T[] array, T[] collection)
         {
             int length = array.Length;
@@ -66,11 +74,14 @@ namespace Varneon.VUdon.ArrayExtensions
 
         /// <summary>
         /// Determines whether an element is in the array
+        /// <para>
+        /// Based on: <see href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.contains?view=net-6.0">List&lt;T&gt;.Contains(T)</see>
+        /// </para>
         /// </summary>
+        /// <returns><b><i>true</i></b> if <b><i>item</i></b> is found in the T[]; otherwise, <b><i>false</i></b>.</returns>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
         /// <param name="item"></param>
-        /// <returns></returns>
         public static bool Contains<T>(this T[] array, T item)
         {
             return Array.IndexOf(array, item) >= 0;
@@ -78,12 +89,15 @@ namespace Varneon.VUdon.ArrayExtensions
 
         /// <summary>
         /// Creates a shallow copy of a range of elements in the source array
+        /// <para>
+        /// Based on: <see href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.getrange?view=net-6.0">List&lt;T&gt;.GetRange(Int32, Int32)</see>
+        /// </para>
         /// </summary>
+        /// <returns>A shallow copy of a range of elements in the source T[].</returns>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
         /// <param name="index"></param>
         /// <param name="count"></param>
-        /// <returns></returns>
         public static T[] GetRange<T>(this T[] array, int index, int count)
         {
             int length = array.Length;
@@ -101,12 +115,15 @@ namespace Varneon.VUdon.ArrayExtensions
 
         /// <summary>
         /// Inserts an element into the array at the specified index
+        /// <para>
+        /// Based on: <see href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.insert?view=net-6.0">List&lt;T&gt;.Insert(Int32, T)</see>
+        /// </para>
         /// </summary>
+        /// <returns>Modified T[]</returns>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
         /// <param name="index"></param>
         /// <param name="item"></param>
-        /// <returns></returns>
         public static T[] Insert<T>(this T[] array, int index, T item)
         {
             int length = array.Length;
@@ -136,12 +153,15 @@ namespace Varneon.VUdon.ArrayExtensions
 
         /// <summary>
         /// Inserts the elements of a collection into the array at the specified index
+        /// <para>
+        /// Based on: <see href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.insertrange?view=net-6.0">List&lt;T&gt;.InsertRange(Int32, IEnumerable<T>)</see>
+        /// </para>
         /// </summary>
+        /// <returns>Modified T[]</returns>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
         /// <param name="index"></param>
         /// <param name="item"></param>
-        /// <returns></returns>
         public static T[] InsertRange<T>(this T[] array, int index, T[] collection)
         {
             int length = array.Length;
@@ -176,7 +196,11 @@ namespace Varneon.VUdon.ArrayExtensions
 
         /// <summary>
         /// Removes the first occurrence of a specific object from the array
+        /// <para>
+        /// Based on: <see href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.remove?view=net-6.0">List&lt;T&gt;.Remove(T)</see>
+        /// </para>
         /// </summary>
+        /// <returns>Modified T[]</returns>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
         /// <param name="item"></param>
@@ -191,7 +215,11 @@ namespace Varneon.VUdon.ArrayExtensions
 
         /// <summary>
         /// Removes the element at the specified index of the array
+        /// <para>
+        /// Based on: <see href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.removeat?view=net-6.0">List&lt;T&gt;.RemoveAt(Int32)</see>
+        /// </para>
         /// </summary>
+        /// <returns>Modified T[]</returns>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
         /// <param name="index"></param>
@@ -225,10 +253,10 @@ namespace Varneon.VUdon.ArrayExtensions
         /// <summary>
         /// Resizes the array
         /// </summary>
+        /// <returns>Modified T[]</returns>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
         /// <param name="newSize"></param>
-        /// <returns></returns>
         public static T[] Resize<T>(this T[] array, int newSize)
         {
             if(newSize < 0) { newSize = 0; }
@@ -242,10 +270,13 @@ namespace Varneon.VUdon.ArrayExtensions
 
         /// <summary>
         /// Reverses the order of the elements in the entire array
+        /// <para>
+        /// Based on: <see href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.reverse?view=net-6.0">List&lt;T&gt;.Reverse</see>
+        /// </para>
         /// </summary>
+        /// <returns>Modified T[]</returns>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
-        /// <returns></returns>
         public static T[] Reverse<T>(this T[] array)
         {
             Array.Reverse(array);
@@ -259,11 +290,13 @@ namespace Varneon.VUdon.ArrayExtensions
 
         /// <summary>
         /// Returns the first element of the sequence, or a specified default value if no such element is found.
+        /// <para>
+        /// Based on: <see href="https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.firstordefault?view=net-6.0">Enumerable.FirstOrDefault</see>
+        /// </para>
         /// </summary>
-        /// <remarks>Equivalent to System.Linq.FirstOrDefault() without predicate</remarks>
+        /// <returns>The first element of a sequence, or a default value if no element is found</returns>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
-        /// <returns></returns>
         public static T FirstOrDefault<T>(this T[] array)
         {
             if (array.Length == 0) { return default; }
@@ -273,11 +306,13 @@ namespace Varneon.VUdon.ArrayExtensions
 
         /// <summary>
         /// Returns the last element of a sequence, or a specified default value if the sequence contains no elements.
+        /// <para>
+        /// Based on: <see href="https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.lastordefault?view=net-6.0">Enumerable.LastOrDefault</see>
+        /// </para>
         /// </summary>
-        /// <remarks>Equivalent to System.Linq.FirstOrDefault()</remarks>
+        /// <returns>The last element of a sequence, or a default value if no element is found</returns>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
-        /// <returns></returns>
         public static T LastOrDefault<T>(this T[] array)
         {
             int length = array.Length;
@@ -293,12 +328,15 @@ namespace Varneon.VUdon.ArrayExtensions
 
         /// <summary>
         /// Gets the element type of the array type
+        /// <para>
+        /// Based on: <see href="https://learn.microsoft.com/en-us/dotnet/api/system.type.getelementtype?view=net-6.0">Type.GetElementType</see>
+        /// </para>
         /// </summary>
+        /// <returns>The <see href="https://learn.microsoft.com/en-us/dotnet/api/system.type?view=net-6.0">Type</see> of the object encompassed or referred to by the current array</returns>
         /// <remarks>
         /// Type.GetElementType() is not exposed in Udon
         /// </remarks>
         /// <param name="type"></param>
-        /// <returns></returns>
         public static Type GetElementTypeUdon(this Type type)
         {
             return Type.GetType(type.FullName.TrimEnd(']', '['));
