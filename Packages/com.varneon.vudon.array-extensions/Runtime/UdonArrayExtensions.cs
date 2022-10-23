@@ -18,8 +18,8 @@ namespace Varneon.VUdon.ArrayExtensions
         /// </summary>
         /// <returns>Modified T[]</returns>
         /// <typeparam name="T">The type of elements in the array.</typeparam>
-        /// <param name="array"></param>
-        /// <param name="item"></param>
+        /// <param name="array">Source T[] to modify.</param>
+        /// <param name="item">The object to be added to the end of the T[].</param>
         public static T[] Add<T>(this T[] array, T item)
         {
             int length = array.Length;
@@ -41,8 +41,8 @@ namespace Varneon.VUdon.ArrayExtensions
         /// </summary>
         /// <returns>Modified T[]</returns>
         /// <typeparam name="T">The type of elements in the array.</typeparam>
-        /// <param name="array"></param>
-        /// <param name="collection"></param>
+        /// <param name="array">Source T[] to modify.</param>
+        /// <param name="collection">The collection whose elements should be added to the end of the T[].</param>
         public static T[] AddRange<T>(this T[] array, T[] collection)
         {
             int length = array.Length;
@@ -66,8 +66,8 @@ namespace Varneon.VUdon.ArrayExtensions
         /// </summary>
         /// <returns><b><i>true</i></b> if <b><i>item</i></b> is found in the T[]; otherwise, <b><i>false</i></b>.</returns>
         /// <typeparam name="T">The type of elements in the array.</typeparam>
-        /// <param name="array"></param>
-        /// <param name="item"></param>
+        /// <param name="array">Source T[] to modify.</param>
+        /// <param name="item">The object to locate in the T[].</param>
         public static bool Contains<T>(this T[] array, T item)
         {
             return Array.IndexOf(array, item) >= 0;
@@ -81,9 +81,9 @@ namespace Varneon.VUdon.ArrayExtensions
         /// </summary>
         /// <returns>A shallow copy of a range of elements in the source T[].</returns>
         /// <typeparam name="T">The type of elements in the array.</typeparam>
-        /// <param name="array"></param>
-        /// <param name="index"></param>
-        /// <param name="count"></param>
+        /// <param name="array">Source T[] to modify.</param>
+        /// <param name="index">The zero-based T[] index at which the range starts.</param>
+        /// <param name="count">The number of elements in the range.</param>
         public static T[] GetRange<T>(this T[] array, int index, int count)
         {
             int length = array.Length;
@@ -107,9 +107,9 @@ namespace Varneon.VUdon.ArrayExtensions
         /// </summary>
         /// <returns>Modified T[]</returns>
         /// <typeparam name="T">The type of elements in the array.</typeparam>
-        /// <param name="array"></param>
-        /// <param name="index"></param>
-        /// <param name="item"></param>
+        /// <param name="array">Source T[] to modify.</param>
+        /// <param name="index">The zero-based index at which <b><i>item</i></b> should be inserted.</param>
+        /// <param name="item">The object to insert.</param>
         public static T[] Insert<T>(this T[] array, int index, T item)
         {
             int length = array.Length;
@@ -145,9 +145,9 @@ namespace Varneon.VUdon.ArrayExtensions
         /// </summary>
         /// <returns>Modified T[]</returns>
         /// <typeparam name="T">The type of elements in the array.</typeparam>
-        /// <param name="array"></param>
-        /// <param name="index"></param>
-        /// <param name="item"></param>
+        /// <param name="array">Source T[] to modify.</param>
+        /// <param name="index">The zero-based index at which the new elements should be inserted.</param>
+        /// <param name="collection">The collection whose elements should be inserted into the T[].</param>
         public static T[] InsertRange<T>(this T[] array, int index, T[] collection)
         {
             int length = array.Length;
@@ -188,8 +188,8 @@ namespace Varneon.VUdon.ArrayExtensions
         /// </summary>
         /// <returns>Modified T[]</returns>
         /// <typeparam name="T">The type of elements in the array.</typeparam>
-        /// <param name="array"></param>
-        /// <param name="item"></param>
+        /// <param name="array">Source T[] to modify.</param>
+        /// <param name="item">The object to remove from the T[].</param>
         public static T[] Remove<T>(this T[] array, T item)
         {
             int index = Array.IndexOf(array, item);
@@ -207,8 +207,8 @@ namespace Varneon.VUdon.ArrayExtensions
         /// </summary>
         /// <returns>Modified T[]</returns>
         /// <typeparam name="T">The type of elements in the array.</typeparam>
-        /// <param name="array"></param>
-        /// <param name="index"></param>
+        /// <param name="array">Source T[] to modify.</param>
+        /// <param name="index">The zero-based index of the element to remove.</param>
         public static T[] RemoveAt<T>(this T[] array, int index)
         {
             int length = array.Length;
@@ -244,7 +244,7 @@ namespace Varneon.VUdon.ArrayExtensions
         /// </summary>
         /// <returns>Modified T[]</returns>
         /// <typeparam name="T">The type of elements in the array.</typeparam>
-        /// <param name="array"></param>
+        /// <param name="array">Source T[] to modify.</param>
         public static T[] Reverse<T>(this T[] array)
         {
             Array.Reverse(array);
@@ -264,7 +264,7 @@ namespace Varneon.VUdon.ArrayExtensions
         /// </summary>
         /// <returns>The first element of a sequence, or a default value if no element is found</returns>
         /// <typeparam name="T">The type of elements in the array.</typeparam>
-        /// <param name="array"></param>
+        /// <param name="array">Source T[].</param>
         public static T FirstOrDefault<T>(this T[] array)
         {
             if (array.Length == 0) { return default; }
@@ -280,7 +280,7 @@ namespace Varneon.VUdon.ArrayExtensions
         /// </summary>
         /// <returns>The last element of a sequence, or a default value if no element is found</returns>
         /// <typeparam name="T">The type of elements in the array.</typeparam>
-        /// <param name="array"></param>
+        /// <param name="array">Source T[].</param>
         public static T LastOrDefault<T>(this T[] array)
         {
             int length = array.Length;
@@ -304,7 +304,7 @@ namespace Varneon.VUdon.ArrayExtensions
         /// <remarks>
         /// Type.GetElementType() is not exposed in Udon
         /// </remarks>
-        /// <param name="type"></param>
+        /// <param name="type">Array type of which to get the element type.</param>
         public static Type GetElementTypeUdon(this Type type)
         {
             return Type.GetType(type.FullName.TrimEnd(']', '['));
@@ -319,8 +319,8 @@ namespace Varneon.VUdon.ArrayExtensions
         /// </summary>
         /// <returns>Modified T[]</returns>
         /// <typeparam name="T">The type of elements in the array.</typeparam>
-        /// <param name="array"></param>
-        /// <param name="item"></param>
+        /// <param name="array">Source T[] to modify.</param>
+        /// <param name="item">The object to be added to the end of the T[].</param>
         public static T[] AddUnique<T>(this T[] array, T item)
         {
             if (Array.IndexOf(array, item) >= 0) { return array; }
@@ -333,8 +333,8 @@ namespace Varneon.VUdon.ArrayExtensions
         /// </summary>
         /// <returns>Modified T[]</returns>
         /// <typeparam name="T">The type of elements in the array.</typeparam>
-        /// <param name="array"></param>
-        /// <param name="newSize"></param>
+        /// <param name="array">Source T[] to modify.</param>
+        /// <param name="newSize">New size of the array.</param>
         public static T[] Resize<T>(this T[] array, int newSize)
         {
             if (newSize < 0) { newSize = 0; }
