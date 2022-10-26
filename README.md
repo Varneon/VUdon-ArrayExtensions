@@ -9,22 +9,22 @@ Collection of array extension methods compatible with UdonSharp 1.x which adds p
 | **Method** | **Parameters** | **Returns** | **Description** |
 | - | - | - | - |
 | `Add` | `T` | `T[]` | *Adds an item to an array* |
-| `AddUnique` | `T` | `T[]` | *Adds an item to an array and ensures duplicates are not added* |
 | `AddRange` | `T[]` | `T[]` | *Adds the elements of the specified collection to the end of the array* |
+| `AddUnique` | `T` | `T[]` | *Adds an item to an array and ensures duplicates are not added* |
+| `Contains` | `T` | `bool` | *Determines whether an element is in the array* |
+| `FirstOrDefault` | | `T` | *Returns the first element, or default value if the array is empty* |
+| `GetElementTypeUdon` | | `Type` | *Gets the element type of the array type* |
+| `GetRange` | `Int, Int` | `T[]` | *Creates a shallow copy of a range of elements in the source* |
 | `IndexOf` | `T` (`Int`, `Int`) | `Int` | *Returns the zero-based index of the first occurrence of a value in the T[]* |
 | `Insert` | `Int, T` | `T[]` | *Inserts item to array at index* |
 | `InsertRange` | `Int, T[]` | `T[]` | *Inserts the elements of a collection into the <T>[] at the specified index* |
 | `LastIndexOf` | `T` (`Int`, `Int`) | `Int` | *Returns the zero-based index of the last occurrence of a value in the T[]* |
+| `LastOrDefault` | | `T` | *Returns the last element, or default value if the array is empty* |
 | `Remove` | `T` | `T[]` | *Removes item from array* |
 | `RemoveAt` | `Int` | `T[]` | *Removes item at index from array* |
 | `RemoveRange` | `Int, Int` | `T[]` | *Removes a range of elements from the T[]* |
 | `Resize` | `Int` | `T[]` | *Resizes array* |
 | `Reverse` | | `T[]` | *Reverses Array* |
-| `Contains` | `T` | `bool` | *Determines whether an element is in the array* |
-| `GetRange` | `Int, Int` | `T[]` | *Creates a shallow copy of a range of elements in the source* |
-| `GetElementTypeUdon` | | `Type` | *Gets the element type of the array type* |
-| `FirstOrDefault` | | `T` | *Returns the first element, or default value if the array is empty* |
-| `LastOrDefault` | | `T` | *Returns the last element, or default value if the array is empty* |
 
 > ### :warning: For performance reasons this extension method library doesn't implement null checks! Please ensure the arrays you're accessing with the methods from this library are initialized.
 
