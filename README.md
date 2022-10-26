@@ -51,59 +51,70 @@ public class UdonArrayExtensionDemo : UdonSharpBehaviour
     [SerializeField]
     private int count;
 
-    public void Add()
+    public void UsageDemo()
     {
+        // Add item to array
         strings = strings.Add(text);
-    }
 
-    public void AddRange()
-    {
+        // Add range of elements to array
         strings = strings.AddRange(range);
-    }
-
-    public void AddUnique()
-    {
-        strings = strings.AddUnique(text);
-    }
-
-    public void Insert()
-    {
-        strings = strings.Insert(index, text);
-    }
-
-    public void InsertRange()
-    {
-        strings = strings.InsertRange(index, range);
-    }
-
-    public void Resize()
-    {
-        strings = strings.Resize(index);
-    }
-
-    public void Remove()
-    {
-        strings = strings.Remove(text);
-    }
-
-    public void RemoveAt()
-    {
-        strings = strings.RemoveAt(index);
-    }
-
-    public void Reverse()
-    {
-        strings = strings.Reverse();
-    }
-
-    public void GetRange()
-    {
-        Debug.Log(string.Join("\n", strings.GetRange(index, count)));
-    }
-
-    public void Contains()
-    {
+        
+        // Check if item is contained in array
         Debug.Log(strings.Contains(text));
+
+        // Get range of elements in array
+        Debug.Log(string.Join("\n", strings.GetRange(index, count)));
+
+        // Get the first index of element in array
+        Debug.Log(strings.IndexOf(text));
+
+        // Get the first index of element in array, starting at index
+        Debug.Log(strings.IndexOf(text, index));
+
+        // Get the first index of element in array in a range starting at index at the size of count
+        Debug.Log(strings.IndexOf(text, index, count));
+
+        // Insert item to array
+        strings = strings.Insert(index, text);
+
+        // Insert array of items to array
+        strings = strings.InsertRange(index, range);
+
+        // Get the last index of element in array
+        Debug.Log(strings.LastIndexOf(text));
+
+        // Get the last index of element in array, starting at index
+        Debug.Log(strings.LastIndexOf(text, index));
+
+        // Get the last index of element in array in a range starting at index at the size of count
+        Debug.Log(strings.LastIndexOf(text, index, count));
+
+        // Remove item from array
+        strings = strings.Remove(text);
+
+        // Remove item at index from array
+        strings = strings.RemoveAt(index);
+
+        // Remove range of elements from array
+        strings = strings.RemoveRange(index, count);
+
+        // Reverse array
+        strings = strings.Reverse();
+
+        // Get the first element in array
+        Debug.Log(strings.FirstOrDefault());
+
+        // Get the last element in array
+        Debug.Log(strings.LastOrDefault());
+
+        // Get the element type of a type
+        Debug.Log(strings.GetType().GetElementTypeUdon());
+
+        // Add unique item to array (if item exists in array, it won't be added)
+        strings = strings.AddUnique(text);
+
+        // Resize array
+        strings = strings.Resize(index);
     }
 }
 
