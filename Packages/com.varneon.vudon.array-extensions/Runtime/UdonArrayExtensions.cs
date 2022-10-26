@@ -100,6 +100,54 @@ namespace Varneon.VUdon.ArrayExtensions
         }
 
         /// <summary>
+        /// Returns the zero-based index of the first occurrence of a value in the T[].
+        /// <para>
+        /// Based on: <see href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.indexof?view=net-6.0">List&lt;T&gt;.IndexOf(T)</see>
+        /// </para>
+        /// </summary>
+        /// <typeparam name="T">The type of elements in the array.</typeparam>
+        /// <param name="array">Source T[] to locate the object in.</param>
+        /// <param name="item">The object to locate in the T[].</param>
+        /// <returns>The zero-based index of the first occurrence of <b><i>item</i></b> within the range of elements in the T[], if found; otherwise, -1.</returns>
+        public static int IndexOf<T>(this T[] array, T item)
+        {
+            return Array.IndexOf(array, item);
+        }
+
+        /// <summary>
+        /// Returns the zero-based index of the first occurrence of a value in the T[] or in a portion of it.
+        /// <para>
+        /// Based on: <see href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.indexof?view=net-6.0">List&lt;T&gt;.IndexOf(T, Int32)</see>
+        /// </para>
+        /// </summary>
+        /// <typeparam name="T">The type of elements in the array.</typeparam>
+        /// <param name="array">Source T[] to locate the object in.</param>
+        /// <param name="item">The object to locate in the T[].</param>
+        /// <param name="startIndex">The zero-based starting index of the search. 0 (zero) is valid in an empty list.</param>
+        /// <returns>The zero-based index of the first occurrence of <b><i>item</i></b> within the range of elements in the T[] that starts at index, if found; otherwise, -1.</returns>
+        public static int IndexOf<T>(this T[] array, T item, int startIndex)
+        {
+            return Array.IndexOf(array, item, startIndex);
+        }
+
+        /// <summary>
+        /// Returns the zero-based index of the first occurrence of a value in the T[] or in a portion of it.
+        /// <para>
+        /// Based on: <see href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.indexof?view=net-6.0">List&lt;T&gt;.IndexOf(T, Int32, Int32)</see>
+        /// </para>
+        /// </summary>
+        /// <typeparam name="T">The type of elements in the array.</typeparam>
+        /// <param name="array">Source T[] to locate the object in.</param>
+        /// <param name="item">The object to locate in the T[].</param>
+        /// <param name="startIndex">The zero-based starting index of the search. 0 (zero) is valid in an empty list.</param>
+        /// <param name="count">The number of elements in the section to search.</param>
+        /// <returns>The zero-based index of the first occurrence of <b><i>item</i></b> within the range of elements in the T[] that starts at index and contains count number of elements, if found; otherwise, -1.</returns>
+        public static int IndexOf<T>(this T[] array, T item, int startIndex, int count)
+        {
+            return Array.IndexOf(array, item, startIndex, count);
+        }
+
+        /// <summary>
         /// Inserts an element into the array at the specified index
         /// <para>
         /// Based on: <see href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.insert?view=net-6.0">List&lt;T&gt;.Insert(Int32, T)</see>
