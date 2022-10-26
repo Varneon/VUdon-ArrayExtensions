@@ -11,10 +11,13 @@ Collection of array extension methods compatible with UdonSharp 1.x which adds p
 | `Add` | `T` | `T[]` | *Adds an item to an array* |
 | `AddUnique` | `T` | `T[]` | *Adds an item to an array and ensures duplicates are not added* |
 | `AddRange` | `T[]` | `T[]` | *Adds the elements of the specified collection to the end of the array* |
+| `IndexOf` | `T` (`Int`, `Int`) | `Int` | *Returns the zero-based index of the first occurrence of a value in the T[]* |
 | `Insert` | `Int, T` | `T[]` | *Inserts item to array at index* |
 | `InsertRange` | `Int, T[]` | `T[]` | *Inserts the elements of a collection into the <T>[] at the specified index* |
+| `LastIndexOf` | `T` (`Int`, `Int`) | `Int` | *Returns the zero-based index of the last occurrence of a value in the T[]* |
 | `Remove` | `T` | `T[]` | *Removes item from array* |
 | `RemoveAt` | `Int` | `T[]` | *Removes item at index from array* |
+| `RemoveRange` | `Int, Int` | `T[]` | *Removes a range of elements from the T[]* |
 | `Resize` | `Int` | `T[]` | *Resizes array* |
 | `Reverse` | | `T[]` | *Reverses Array* |
 | `Contains` | `T` | `bool` | *Determines whether an element is in the array* |
