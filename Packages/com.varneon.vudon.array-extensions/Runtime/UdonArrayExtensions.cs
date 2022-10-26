@@ -333,6 +333,44 @@ namespace Varneon.VUdon.ArrayExtensions
         }
 
         /// <summary>
+        /// Removes a range of elements from the T[].
+        /// <para>
+        /// Based on: <see href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.removerange?view=net-6.0">List&lt;T&gt;.RemoveRange(Int32, Int32)</see>
+        /// </para>
+        /// </summary>
+        /// <typeparam name="T">The type of elements in the array.</typeparam>
+        /// <param name="array">Source T[] to modify.</param>
+        /// <param name="index">The zero-based T[] index at which the range starts.</param>
+        /// <param name="count">The number of elements in the range.</param>
+        /// <returns>Modified T[]</returns>
+        public static T[] RemoveRange<T>(this T[] array, int index, int count)
+        {
+            int length = array.Length;
+
+            if (index + count > length || index < 0 || count <= 0) { return array; }
+
+            int maxIndex = length - count;
+
+            T[] newArray = new T[maxIndex];
+
+            if(index == 0)
+            {
+                Array.Copy(array, count, newArray, 0, maxIndex);
+            }
+            else if(index + count - 1 == maxIndex)
+            {
+                Array.Copy(array, 0, newArray, 0, maxIndex);
+            }
+            else
+            {
+                Array.Copy(array, 0, newArray, 0, index);
+                Array.Copy(array, index + count, newArray, index, maxIndex - index);
+            }
+
+            return newArray;
+        }
+
+        /// <summary>
         /// Reverses the order of the elements in the entire array
         /// <para>
         /// Based on: <see href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.reverse?view=net-6.0">List&lt;T&gt;.Reverse</see>
