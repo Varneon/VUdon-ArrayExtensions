@@ -10,6 +10,6 @@
     "url": "https://github.com/Varneon"
   },
   "vpmDependencies": {
-    "com.vrchat.udonsharp": "1.x.x"
+    "com.vrchat.worlds": ">=3.4.0 <4.0.0"
   }
 }
