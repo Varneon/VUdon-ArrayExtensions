@@ -6,6 +6,11 @@
 
 Collection of array extension methods compatible with UdonSharp 1.x which adds partial feature set from List
 
+>[!IMPORTANT]
+>Array Extensions' `Add`, `AddRange`, `AddUnique`, `Insert`, `InsertRange`, `Remove`, `RemoveAt` and `RemoveRange` methods are intended for use cases that meet the following criteria:
+>- [Array must be used instead of a DataList](https://creators.vrchat.com/worlds/udon/data-containers/data-lists/#when-should-i-use-an-array-instead-of-a-datalist) *(Commonly due to frequent iteration per frame)*
+>- Methods listed above are invoked infrequently *(They have a high performance cost in exchange for the ability to manipulate arrays)*
+
 | **Method** | **Parameters** | **Returns** | **Description** |
 | - | - | - | - |
 | `Add` | `T` | `T[]` | *Adds an item to an array* |
@@ -26,7 +31,8 @@ Collection of array extension methods compatible with UdonSharp 1.x which adds p
 | `Resize` | `Int` | `T[]` | *Resizes array* |
 | `Reverse` | | `T[]` | *Reverses Array* |
 
-> ### :warning: For performance reasons this extension method library doesn't implement null checks! Please ensure the arrays you're accessing with the methods from this library are initialized.
+> [!CAUTION]
+> For performance reasons this extension method library doesn't implement null checks! Please ensure the arrays you're accessing with the methods from this library are initialized.
 
 ## Usage Demonstration
 ```csharp
@@ -124,25 +130,20 @@ public class UdonArrayExtensionDemo : UdonSharpBehaviour
 
 <details><summary>
 
-### Import with [VRChat Creator Companion](https://vcc.docs.vrchat.com/vpm/packages#user-packages):</summary>
+### Import with [VRChat Creator Companion](https://vcc.docs.vrchat.com/vpm/packages#user-packages)</summary>
 
-> 1. Download `com.varneon.vudon.array-extensions.zip` from [here](https://github.com/Varneon/VUdon-ArrayExtensions/releases/latest)
-> 2. Unpack the .zip somewhere
-> 3. In VRChat Creator Companion, navigate to `Settings` > `User Packages` > `Add`
-> 4. Navigate to the unpacked folder, `com.varneon.vudon.array-extensions` and click `Select Folder`
-> 5. `VUdon - Array Extensions` should now be visible under `Local User Packages` in the project view in VRChat Creator Companion
-> 6. Click `Add`
+> Coming Soon™
 
 </details><details><summary>
 
-### Import with [Unity Package Manager (git)](https://docs.unity3d.com/2019.4/Documentation/Manual/upm-ui-giturl.html):</summary>
+### Import with [Unity Package Manager (git)](https://docs.unity3d.com/2022.3/Documentation/Manual/upm-ui-giturl.html)</summary>
 
 > 1. In the Unity toolbar, select `Window` > `Package Manager` > `[+]` > `Add package from git URL...` 
 > 2. Paste the following link: `https://github.com/Varneon/VUdon-ArrayExtensions.git?path=/Packages/com.varneon.vudon.array-extensions`
 
 </details><details><summary>
 
-### Import from [Unitypackage](https://docs.unity3d.com/2019.4/Documentation/Manual/AssetPackagesImport.html):</summary>
+### Import from [Unitypackage](https://docs.unity3d.com/2022.3/Documentation/Manual/AssetPackagesImport.html)</summary>
 
 > 1. Download latest `com.varneon.vudon.array-extensions.unitypackage` from [here](https://github.com/Varneon/VUdon-ArrayExtensions/releases/latest)
 > 2. Import the downloaded .unitypackage into your Unity project
@@ -153,7 +154,7 @@ public class UdonArrayExtensionDemo : UdonSharpBehaviour
 
 ## Developed by Varneon with :hearts:
 
-[![Twitter Follow](https://img.shields.io/static/v1?style=for-the-badge&label=@Varneon&message=4.9K&color=1b9df0&logo=twitter)](https://twitter.com/Varneon)
+[![Twitter Follow](https://img.shields.io/static/v1?style=for-the-badge&label=@Varneon&message=7.9K&color=1b9df0&logo=twitter)](https://twitter.com/Varneon)
 [![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCKTxeXy7gyaxr-YA9qGWOYg?color=%23FF0000&label=Varneon&logo=YouTube&style=for-the-badge)](https://www.youtube.com/Varneon)
 [![GitHub followers](https://img.shields.io/github/followers/Varneon?color=%23303030&label=Varneon&logo=GitHub&style=for-the-badge)](https://github.com/Varneon)
 
